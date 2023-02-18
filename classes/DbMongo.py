@@ -5,11 +5,10 @@ class DbMongo:
     
     @staticmethod
     def getDB():
-        user = os.environ['USER']
-        password = os.environ['PASSWORD']
-        cluster = os.environ['CLUSTER']
+        user = os.environ['AndreeVasquez']
+        password = os.environ['']
+        cluster = os.environ['cluster0.hfac6vs.mongodb.net']
         query_string = 'retryWrites=true&w=majority'
-
 
         ## Connection String
         uri = "mongodb+srv://{0}:{1}@{2}/?{3}".format(
