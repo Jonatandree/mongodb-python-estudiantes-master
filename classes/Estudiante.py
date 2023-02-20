@@ -4,3 +4,6 @@ class Estudiante:
         self.nombre = nombre
         self.apellido = apellido
         self.telefono = telefono
+
+    def RetornarMiNombre(self):
+        print(self.nombre)
