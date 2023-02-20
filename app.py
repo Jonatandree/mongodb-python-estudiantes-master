@@ -1,18 +1,18 @@
 import pymongo
 from classes import Estudiante, DbMongo
+from dotenv import load_dotenv
 
 
 def main():
 
     db = DbMongo.getDB()
-    collection = db['estudiante']
 
+    estudiante = Estudiante ("andree8", "vasquez", "34323434")
+    estudiante.save()
 
-    estudiante = Estudiante("andree2","vasquez","31487539")
-    print(estudiante.__dict__)
-    collection.insert_one( estudiante.__dict__ )
 
 if __name__ == "__main__":
+    load_dotenv()
     main()
 
 

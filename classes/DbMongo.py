@@ -1,17 +1,14 @@
 import pymongo
+import os
 
 class DbMongo:
 
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-        print("Objeto creado")
-
+     
     @staticmethod
     def getDB():
-        user = 'AndreeVasquez'
-        password = 'cocorasta'
-        cluster = 'cluster0.hfac6vs.mongodb.net'
+        user = os.environ['USER'] 
+        password = os.environ['PASSWORD'] 
+        cluster = os.environ['CLUSTER']
         query_string = 'retryWrites=true&w=majority'
 
 
@@ -24,6 +21,6 @@ class DbMongo:
         )
 
         client = pymongo.MongoClient(uri)
-        db = client['unah']
+        db = client[os.environ['DB']]
 
-        return db
+        return client, db
