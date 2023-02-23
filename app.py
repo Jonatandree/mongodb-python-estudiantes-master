@@ -5,10 +5,24 @@ from dotenv import load_dotenv
 
 def main():
 
-    db = DbMongo.getDB()
+    client,db = DbMongo.getDB()
 
-    estudiante = Estudiante ("andree8", "vasquez", "34323434")
-    estudiante.save()
+    #estudiante1 = Estudiante ("jonatn", "tradeo", "343")
+    estudiante2 = Estudiante ("pitagoras", "tradeo", "555")
+    estudiante2.save(db)
+    #estudiante1.save(db)    
+
+    #estudiante1.nombre = "atenancio"
+    #estudiante2.nombre = "aparicio"
+
+    #estudiante1.update(db)
+    estudiante2.update(db)
+
+    
+   
+
+    
+
 
 
 if __name__ == "__main__":
